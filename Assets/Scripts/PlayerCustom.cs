@@ -11,7 +11,6 @@ public class PlayerCustom : MonoBehaviour {
 
   private GameObject playerRef;
   private Vector3 origin;
-  private int lives = 3;
   private GameObject playerFollowCamera;
   private CinemachineVirtualCamera vCam;
 
@@ -24,27 +23,18 @@ public class PlayerCustom : MonoBehaviour {
 
   public void deletePlayer() {
     Debug.Log("deletePlayer called");
-    if (lives > 0) {
-      lives--;
-      Debug.Log($"respawning player... -- lives remaining: {lives}");
-      //Dispatcher.INSTANCE.spawnPlayer();
-      //this.gameObject.transform.position = new Vector3(0,0,0);
-      //GameObject.Find("PlayerArmature").transform.position = new Vector3(0,0,0);
-      //this.GetComponent<PlayerArmature>().transform.position = new Vector3(0,0,0);
-      //this.GetComponent<CharacterController>().transform.position = new Vector3(0,0,0);
+    if (GameController.INSTANCE.lives > 0) {
+      GameController.INSTANCE.lives--;
+      Debug.Log($"respawning player... -- lives remaining: {GameController.INSTANCE.lives}");
       Destroy(this.gameObject);
       this.playerRef = Instantiate(Resources.Load("PlayerArmature", typeof(GameObject))) as GameObject;
-
-      //@TODO PlayerFollowCamera needs to update its reference to 
-      // PlayerCameraRoot (PlayerArmature > PlayerCameraRoot)
-      // PlayerArmature (PlayerArmature)
-      
       this.vCam.Follow = this.playerRef.transform.Find("PlayerCameraRoot");
       this.vCam.LookAt = this.playerRef.transform;
+    } else {
+      Debug.Log("no lives remaining -- game over");
+      Destroy(this.gameObject);
     }
-    // having issues calling Destroy(this.gameObject) ...
-    // will move player to start and remove a life instead to keep moving forward.
-    // Destroy(this.gameObject);
+
   }
 
   
