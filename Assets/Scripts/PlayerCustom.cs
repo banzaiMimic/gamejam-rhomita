@@ -49,4 +49,10 @@ public class PlayerCustom : MonoBehaviour {
     GameController.INSTANCE.isDashing = false;
   }
 
+  public void Update() {
+    if (this.transform.position.y < -7) {
+      deletePlayer();
+    }
+  }
+
 }
