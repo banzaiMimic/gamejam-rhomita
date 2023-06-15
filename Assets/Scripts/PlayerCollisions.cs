@@ -20,9 +20,11 @@ public class PlayerCollisions : MonoBehaviour {
     if (colliderName == "colliderTop") {
       Debug.Log("top of elevator detected -- blow up player");
       this.playerCustom.deletePlayer();
+      //this.playerCustom.dashPlayer();
 
     } else if (colliderName == "colliderBot") {
       Debug.Log("bottom of elevator detected -- dash player forward...");
+      this.playerCustom.dashPlayer();
     }
   }
 

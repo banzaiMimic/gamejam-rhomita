@@ -37,6 +37,16 @@ public class PlayerCustom : MonoBehaviour {
 
   }
 
-  
+  public void dashPlayer() {
+    Debug.Log("trying dash...");
+    StartCoroutine(Dash());
+  }
+
+  IEnumerator Dash() {
+    GameController.INSTANCE.isDashing = true;
+    yield return new WaitForSeconds(GameController.INSTANCE.dashTime);
+    Debug.Log("stopping dash.");
+    GameController.INSTANCE.isDashing = false;
+  }
 
 }

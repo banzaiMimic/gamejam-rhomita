@@ -7,6 +7,9 @@ public class GameController : MonoBehaviour {
   static GameController _instance;
 
   public int lives = 3;
+  public bool isDashing = false;
+  public float dashSpeed = 70f;
+  public float dashTime = 1 / 2;
 
   public static GameController INSTANCE {
     get {
