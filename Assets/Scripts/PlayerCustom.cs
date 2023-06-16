@@ -22,7 +22,6 @@ public class PlayerCustom : MonoBehaviour {
   }
 
   public void deletePlayer() {
-    Debug.Log("deletePlayer called");
     if (GameController.INSTANCE.lives > 0) {
       GameController.INSTANCE.lives--;
       Debug.Log($"respawning player... -- lives remaining: {GameController.INSTANCE.lives}");
@@ -37,15 +36,14 @@ public class PlayerCustom : MonoBehaviour {
 
   }
 
-  public void dashPlayer() {
-    Debug.Log("trying dash...");
+  public void dashPlayer(float velocityY) {
+    GameController.INSTANCE.dashVelocityY = velocityY;
     StartCoroutine(Dash());
   }
 
   IEnumerator Dash() {
     GameController.INSTANCE.isDashing = true;
     yield return new WaitForSeconds(GameController.INSTANCE.dashTime);
-    Debug.Log("stopping dash.");
     GameController.INSTANCE.isDashing = false;
   }
 

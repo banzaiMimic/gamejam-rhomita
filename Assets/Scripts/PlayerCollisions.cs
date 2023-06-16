@@ -10,21 +10,33 @@ public class PlayerCollisions : MonoBehaviour {
     this.playerCustom = this.GetComponent<PlayerCustom>();
   }
 
-  void Start() {
-    Debug.Log("PlayerCollisions script loaded");
+  private void OnCollisionEnter(Collision collision) {
+    string colName = collision.gameObject.name;
+    Debug.Log($"collision detected with {colName}");
   }
 
   private void OnTriggerEnter(Collider other) {
     string colliderName = other.name;
+    string colliderTag = other.tag;
+
+    if (colliderTag == Tags.ground.ToString()) {
+      GameController.INSTANCE.isGrounded = true;
+    } else if (colliderTag == Tags.trampolene.ToString()) {
+      this.playerCustom.dashPlayer(GameController.DEFAULT_VELOCITY_Y);
+    }
 
     if (colliderName == "colliderTop") {
-      Debug.Log("top of elevator detected -- blow up player");
       this.playerCustom.deletePlayer();
-      //this.playerCustom.dashPlayer();
-
     } else if (colliderName == "colliderBot") {
-      Debug.Log("bottom of elevator detected -- dash player forward...");
-      this.playerCustom.dashPlayer();
+      this.playerCustom.dashPlayer(0f);
+    }
+
+  }
+
+  private void OnTriggerExit(Collider other) {
+    string colliderTag = other.tag;
+    if (colliderTag == "ground") {
+      GameController.INSTANCE.isGrounded = false;
     }
   }
 

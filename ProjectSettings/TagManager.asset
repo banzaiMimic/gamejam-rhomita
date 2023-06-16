@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CinemachineTarget
   - devTest
+  - ground
+  - trampolene
   layers:
   - Default
   - TransparentFX

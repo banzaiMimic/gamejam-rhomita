@@ -46,15 +46,11 @@ namespace StarterAssets
         [Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
         public float FallTimeout = 0.15f;
 
-        [Header("Player Grounded")]
-        [Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
-        public bool Grounded = true;
-
         [Tooltip("Useful for rough ground")]
-        public float GroundedOffset = -0.14f;
+        public float GroundedOffset = -0.24f;
 
         [Tooltip("The radius of the grounded check. Should match the radius of the CharacterController")]
-        public float GroundedRadius = 0.28f;
+        public float GroundedRadius = 0.38f;
 
         [Tooltip("What layers the character uses as ground")]
         public LayerMask GroundLayers;
@@ -175,18 +171,10 @@ namespace StarterAssets
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
         }
 
-        private void GroundedCheck()
-        {
-            // set sphere position, with offset
-            Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset,
-                transform.position.z);
-            Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
-                QueryTriggerInteraction.Ignore);
-
+        private void GroundedCheck() {
             // update animator if using character
-            if (_hasAnimator)
-            {
-                _animator.SetBool(_animIDGrounded, Grounded);
+            if (_hasAnimator) {
+                _animator.SetBool(_animIDGrounded, GameController.INSTANCE.isGrounded);
             }
         }
 
@@ -268,10 +256,10 @@ namespace StarterAssets
 			Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
 
-      Debug.Log("moving... isDashing? :" + GameController.INSTANCE.isDashing);
       if (GameController.INSTANCE.isDashing)
       {
         _speed = GameController.INSTANCE.dashSpeed;
+        _verticalVelocity = GameController.INSTANCE.dashVelocityY;
       }
       // move the player
       _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
@@ -285,10 +273,8 @@ namespace StarterAssets
             }
         }
 
-        private void JumpAndGravity()
-        {
-            if (Grounded)
-            {
+        private void JumpAndGravity() {
+            if (GameController.INSTANCE.isGrounded) {
                 // reset the fall timeout timer
                 _fallTimeoutDelta = FallTimeout;
 
@@ -366,7 +352,7 @@ namespace StarterAssets
             Color transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);
             Color transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);
 
-            if (Grounded) Gizmos.color = transparentGreen;
+            if (GameController.INSTANCE.isGrounded) Gizmos.color = transparentGreen;
             else Gizmos.color = transparentRed;
 
             // when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
