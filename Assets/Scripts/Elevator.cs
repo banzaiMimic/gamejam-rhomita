@@ -10,10 +10,6 @@ public class Elevator : MonoBehaviour {
   private readonly int yMin = -4;
   private readonly double moveSpeed = .02;
 
-  private void Start() {
-    Debug.Log("elevator component initialized...");
-  }
-
   private void Update() {
     if (goingUp) {
       if (this.transform.position.y < this.yMax) {

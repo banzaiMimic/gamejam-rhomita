@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
   public bool isDashing = false;
   public float dashSpeed = 70f;
   public float dashTime = 1 / 2;
+  public bool isGrounded = true;
 
   public static GameController INSTANCE {
     get {
