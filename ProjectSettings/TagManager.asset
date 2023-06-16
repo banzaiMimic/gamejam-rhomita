@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - devTest
+  - ground
   layers:
   - Default
   - TransparentFX
