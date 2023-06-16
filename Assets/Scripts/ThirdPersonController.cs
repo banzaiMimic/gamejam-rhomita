@@ -259,6 +259,7 @@ namespace StarterAssets
       if (GameController.INSTANCE.isDashing)
       {
         _speed = GameController.INSTANCE.dashSpeed;
+        _verticalVelocity = GameController.INSTANCE.dashVelocityY;
       }
       // move the player
       _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +

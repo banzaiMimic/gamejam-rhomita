@@ -36,7 +36,8 @@ public class PlayerCustom : MonoBehaviour {
 
   }
 
-  public void dashPlayer() {
+  public void dashPlayer(float velocityY) {
+    GameController.INSTANCE.dashVelocityY = velocityY;
     StartCoroutine(Dash());
   }
 

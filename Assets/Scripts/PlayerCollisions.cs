@@ -19,33 +19,24 @@ public class PlayerCollisions : MonoBehaviour {
     string colliderName = other.name;
     string colliderTag = other.tag;
 
-    handleGroundedEnter(colliderTag);
+    if (colliderTag == Tags.ground.ToString()) {
+      GameController.INSTANCE.isGrounded = true;
+    } else if (colliderTag == Tags.trampolene.ToString()) {
+      this.playerCustom.dashPlayer(GameController.DEFAULT_VELOCITY_Y);
+    }
 
     if (colliderName == "colliderTop") {
       this.playerCustom.deletePlayer();
     } else if (colliderName == "colliderBot") {
-      this.playerCustom.dashPlayer();
+      this.playerCustom.dashPlayer(0f);
     }
 
   }
 
   private void OnTriggerExit(Collider other) {
     string colliderTag = other.tag;
-    handleGroundedExit(colliderTag);
-  }
-
-
-  private void handleGroundedExit(string colliderTag) {
     if (colliderTag == "ground") {
-      Debug.Log($"trigger exit detected with {colliderTag}");
       GameController.INSTANCE.isGrounded = false;
-    }
-  } 
-
-  private void handleGroundedEnter(string colliderTag) {
-    if (colliderTag == "ground") {
-      Debug.Log($"trigger enter detected with {colliderTag}");
-      GameController.INSTANCE.isGrounded = true;
     }
   }
 
