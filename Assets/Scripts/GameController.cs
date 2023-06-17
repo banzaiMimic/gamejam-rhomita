@@ -10,10 +10,11 @@ public class GameController : MonoBehaviour {
 
   public int lives = 3;
   public bool isDashing = false;
+  public bool isGrounded = true;
   public float dashSpeed = 70f;
   public float dashTime = 1 / 2;
   public float dashVelocityY = 0f;
-  public bool isGrounded = true;
+  public float healthAmount = 100f;
 
   public static GameController INSTANCE {
     get {

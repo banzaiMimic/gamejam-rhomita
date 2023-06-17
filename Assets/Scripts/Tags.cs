@@ -1,4 +1,5 @@
 ﻿public enum Tags {
   ground,
-  trampolene
+  trampolene,
+  moneda
 }

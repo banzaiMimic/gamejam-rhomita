@@ -8,6 +8,7 @@ TagManager:
   - devTest
   - ground
   - trampolene
+  - moneda
   layers:
   - Default
   - TransparentFX
