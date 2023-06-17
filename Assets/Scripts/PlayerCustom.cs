@@ -13,12 +13,14 @@ public class PlayerCustom : MonoBehaviour {
   private Vector3 origin;
   private GameObject playerFollowCamera;
   private CinemachineVirtualCamera vCam;
+  private HealthManager healthManager;
 
   public void Awake() {
     this.playerRef = this.gameObject;
     this.origin = this.gameObject.transform.position;
     this.playerFollowCamera = GameObject.Find("PlayerFollowCamera");
     this.vCam = this.playerFollowCamera.GetComponent<CinemachineVirtualCamera>();
+    this.healthManager = GameObject.Find("HealthManager").GetComponent<HealthManager>();
   }
 
   public void deletePlayer() {
@@ -34,6 +36,14 @@ public class PlayerCustom : MonoBehaviour {
       Destroy(this.gameObject);
     }
 
+  }
+
+  public void damagePlayer(float damage) {
+    this.healthManager.damagePlayer(damage);
+  }
+
+  public void healPlayer(float heal) {
+    this.healthManager.healPlayer(heal);
   }
 
   public void dashPlayer(float velocityY) {

@@ -23,6 +23,10 @@ public class PlayerCollisions : MonoBehaviour {
       GameController.INSTANCE.isGrounded = true;
     } else if (colliderTag == Tags.trampolene.ToString()) {
       this.playerCustom.dashPlayer(GameController.DEFAULT_VELOCITY_Y);
+    } else if (colliderTag == Tags.moneda.ToString()) {
+      
+      this.playerCustom.damagePlayer(10f);
+      Destroy(other.gameObject);
     }
 
     if (colliderName == "colliderTop") {
