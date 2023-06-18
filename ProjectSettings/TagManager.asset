@@ -9,6 +9,7 @@ TagManager:
   - ground
   - trampolene
   - moneda
+  - TargetEnemy
   layers:
   - Default
   - TransparentFX
