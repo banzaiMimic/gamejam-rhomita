@@ -10,6 +10,9 @@ TagManager:
   - trampolene
   - moneda
   - TargetEnemy
+  - SFXManager
+  - ZonaMuerte
+  - Teleport
   layers:
   - Default
   - TransparentFX

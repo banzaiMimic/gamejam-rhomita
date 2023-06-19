@@ -39,13 +39,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Golpe
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -79,7 +79,8 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 723096430288179899, guid: 102ff446b7a3bb242b2ff630039937cf, type: 3}
+  m_Motion: {fileID: -7913458300009246701, guid: c6708be3bc7162e41af2864d20d0e9ce,
+    type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -93,7 +94,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Caminar
-  m_Speed: 2
+  m_Speed: 6
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -7077630369448834033}
@@ -107,7 +108,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -623603649343465320, guid: 102ff446b7a3bb242b2ff630039937cf,
+  m_Motion: {fileID: -6877751558034246562, guid: c6708be3bc7162e41af2864d20d0e9ce,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -187,7 +188,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -1609281748187839663, guid: 102ff446b7a3bb242b2ff630039937cf,
+  m_Motion: {fileID: -2878354710649715051, guid: c6708be3bc7162e41af2864d20d0e9ce,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 

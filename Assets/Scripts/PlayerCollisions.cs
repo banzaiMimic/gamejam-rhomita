@@ -30,7 +30,7 @@ public class PlayerCollisions : MonoBehaviour {
     }
 
     if (colliderName == "colliderTop") {
-      this.playerCustom.deletePlayer();
+            this.playerCustom.deathPlayer = true;
     } else if (colliderName == "colliderBot") {
       this.playerCustom.dashPlayer(0f);
     }

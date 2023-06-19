@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 102ff446b7a3bb242b2ff630039937cf
+guid: c6708be3bc7162e41af2864d20d0e9ce
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -24,7 +24,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -34,9 +34,9 @@ ModelImporter:
     clipAnimations:
     - serializedVersion: 16
       name: Caminar
-      takeName: Scene
-      internalID: -623603649343465320
-      firstFrame: 1
+      takeName: Esqueleto|EsqueletoAction
+      internalID: -6877751558034246562
+      firstFrame: 0
       lastFrame: 139
       wrapMode: 0
       orientationOffsetY: 0
@@ -60,11 +60,11 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Golpe
-      takeName: Scene
-      internalID: -1609281748187839663
+      takeName: Esqueleto|EsqueletoAction
+      internalID: -2878354710649715051
       firstFrame: 140
       lastFrame: 170
       wrapMode: 0
@@ -89,13 +89,13 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Contacto
-      takeName: Scene
-      internalID: 723096430288179899
+      takeName: Esqueleto|EsqueletoAction
+      internalID: -7913458300009246701
       firstFrame: 171
-      lastFrame: 190
+      lastFrame: 189
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -118,7 +118,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -167,7 +167,92 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Robot_Enemy01(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cube
+      parentName: Robot_Enemy01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Esqueleto
+      parentName: Robot_Enemy01(Clone)
+      position: {x: -0, y: 0.43297312, z: 0.13523501}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Spine
+      parentName: Esqueleto
+      position: {x: -0, y: 0.0014239285, z: 0}
+      rotation: {x: 0.7071068, y: -3.9983748e-25, z: 3.9983745e-25, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine1
+      parentName: Spine
+      position: {x: -1.5509636e-27, y: 0.0026586663, z: 3.7252902e-11}
+      rotation: {x: -0, y: 3.231175e-25, z: -6.0584536e-26, w: 1}
+      scale: {x: 0.84897214, y: 0.84897214, z: 0.84897214}
+    - name: Head
+      parentName: Spine1
+      position: {x: 3.861253e-27, y: 0.0064572976, z: -8.381903e-11}
+      rotation: {x: 2.350989e-34, y: -2.7755576e-17, z: -7.2759565e-10, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: Head_end
+      parentName: Head
+      position: {x: -0, y: 0.0093784565, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Arm.R
+      parentName: Spine
+      position: {x: 0.001132757, y: 0.0015253436, z: 0.0000027399137}
+      rotation: {x: -0, y: 1.9991874e-25, z: -0.7071068, w: 0.7071068}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: LegUp.R
+      parentName: Arm.R
+      position: {x: 6.519258e-11, y: 0.0028109655, z: 2.7755575e-19}
+      rotation: {x: -0.078416094, y: 0.084919006, z: 0.6914997, w: -0.7130693}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+    - name: LegDown.R
+      parentName: LegUp.R
+      position: {x: 4.2356882e-10, y: 0.0018498474, z: 1.02933766e-10}
+      rotation: {x: -0.3467362, y: 0.0008831953, z: 0.0021181651, w: 0.93795985}
+      scale: {x: 1.0000005, y: 1.0000007, z: 1.0000002}
+    - name: Foot.R
+      parentName: LegDown.R
+      position: {x: 4.8472726e-11, y: 0.0032931503, z: -1.5820944e-12}
+      rotation: {x: 0.7240221, y: -0.0005238495, z: -0.017398126, w: 0.6895572}
+      scale: {x: 1.0000007, y: 1.0000002, z: 1}
+    - name: Foot.R_end
+      parentName: Foot.R
+      position: {x: -0, y: 0.002463653, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Arm.L
+      parentName: Spine
+      position: {x: -0.001132757, y: 0.0015253436, z: 0.0000027399137}
+      rotation: {x: -0, y: 1.9991874e-25, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: LegUp.L
+      parentName: Arm.L
+      position: {x: 7.4505804e-11, y: 0.0028109655, z: 1.8626451e-11}
+      rotation: {x: 0.0784161, y: 0.08491907, z: 0.6914999, w: 0.71306926}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: LegDown.L
+      parentName: LegUp.L
+      position: {x: 5.5774354e-11, y: 0.0018498471, z: 4.8098057e-11}
+      rotation: {x: -0.34673622, y: -0.0008831877, z: -0.0021182206, w: 0.93795985}
+      scale: {x: 1.000001, y: 1.0000006, z: 1.0000004}
+    - name: Foot.L
+      parentName: LegDown.L
+      position: {x: -4.463598e-10, y: 0.0032931506, z: 4.748557e-12}
+      rotation: {x: 0.72402215, y: 0.0005237867, z: 0.01739802, w: 0.6895571}
+      scale: {x: 0.9999997, y: 0.9999998, z: 0.9999999}
+    - name: Foot.L_end
+      parentName: Foot.L
+      position: {x: -0, y: 0.002463653, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -178,7 +263,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: Spine
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1

@@ -16,7 +16,18 @@ public class GameController : MonoBehaviour {
   public float dashVelocityY = 0f;
   public float healthAmount = 100f;
 
-  public static GameController INSTANCE {
+	private void Awake()
+	{
+		var gameControllerInstance = FindObjectsOfType<GameController>();
+        if (gameControllerInstance.Length > 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+	}
+
+	public static GameController INSTANCE {
     get {
       if (_instance == null) {
         GameObject go = new GameObject("GameController");
