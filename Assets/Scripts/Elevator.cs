@@ -5,10 +5,17 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour {
 
+  [SerializeField]
   private bool goingUp = true;
-  private readonly int yMax = 7;
-  private readonly int yMin = -4;
-  private readonly double moveSpeed = .02;
+
+  [SerializeField]
+  private int yMax = 7;
+
+  [SerializeField]
+  private int yMin = -4;
+
+  [SerializeField]
+  private double moveSpeed = .02;
 
   private void Update() {
     if (goingUp) {
