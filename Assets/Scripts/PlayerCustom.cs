@@ -18,6 +18,8 @@ public class PlayerCustom : MonoBehaviour {
 
     public bool deathPlayer = false;
     public bool teleportPlayer = false;
+  [SerializeField]
+  public Transform devSpawn;
 
 
 	public void Awake() {
@@ -26,6 +28,10 @@ public class PlayerCustom : MonoBehaviour {
     this.playerFollowCamera = GameObject.Find("PlayerFollowCamera");
     this.vCam = this.playerFollowCamera.GetComponent<CinemachineVirtualCamera>();
     this.healthManager = GameObject.Find("HealthManager").GetComponent<HealthManager>();
+
+    if (this.devSpawn != null) {
+      this.playerRef.transform.position = this.devSpawn.position;
+    }
     }
 
   /*public void deletePlayer() {
