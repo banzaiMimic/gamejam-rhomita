@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5160,12 +5160,17 @@ PrefabInstance:
     - target: {fileID: 9131307707134438990, guid: d7fdab09bd6933b4e938e674c46a2cc7,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9131307707134438991, guid: d7fdab09bd6933b4e938e674c46a2cc7,
         type: 3}
       propertyPath: m_Name
       value: SFXManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9131307707134438991, guid: d7fdab09bd6933b4e938e674c46a2cc7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7fdab09bd6933b4e938e674c46a2cc7, type: 3}

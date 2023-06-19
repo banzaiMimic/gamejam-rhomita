@@ -40,10 +40,11 @@ public class PlayerCollisions : MonoBehaviour {
       Destroy(other.gameObject.transform.parent.gameObject);
     }
 
-      if (colliderName == "colliderTop") {
-            this.playerCustom.deathPlayer = true;
+    if (colliderName == "colliderTop") {
+       this.playerCustom.deathPlayer = true;
     } else if (colliderName == "colliderBot") {
       this.playerCustom.dashPlayer(0f);
+      SFXManager.INSTANCE.playClip("elevatorBottom");
     }
 
   }

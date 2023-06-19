@@ -89,11 +89,13 @@ public class PlayerCustom : MonoBehaviour {
 
 	public void damagePlayer(float damage) {
     this.healthManager.damagePlayer(damage);
-    }
+    SFXManager.INSTANCE.playClip("coinWrong");
+  }
 
     public void healPlayer(float heal) {
     this.healthManager.healPlayer(heal);
-    }
+    SFXManager.INSTANCE.playClip("coin");
+  }
 
     public void dashPlayer(float velocityY) {
     GameController.INSTANCE.dashVelocityY = velocityY;

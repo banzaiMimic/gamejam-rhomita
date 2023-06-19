@@ -134,7 +134,8 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
-            audioSource = GameObject.FindGameObjectWithTag("SFXManager").GetComponent<AudioSource>();
+            //audioSource = GameObject.FindGameObjectWithTag("SFXManager").GetComponent<AudioSource>();
+            audioSource = SFXManager.INSTANCE.GetComponent<AudioSource>();
 		}
 
         private void Start()
@@ -312,7 +313,9 @@ namespace StarterAssets
                         _animator.SetBool(_animIDJump, true);
                     }
 
-					audioSource.PlayOneShot(jump);
+                    Debug.Log("jump should only call once...");
+                    SFXManager.INSTANCE.playClip("jump");
+					          //audioSource.PlayOneShot(jump);
 				}
 
                 // jump timeout
