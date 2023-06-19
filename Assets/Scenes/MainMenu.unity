@@ -486,7 +486,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Animaciones\r\nhttps://www.mixamo.com/\r\n\r\nProgramaci\xF3n\r\nAutor
-    Mimic\r\nEdici\xF3n EfrainRC3\r\n\r\nDise\xF1o de videojuego\r\nEfrainRC3\r\n\r\nDise\xF1o
+    banzaiMimic\r\nEdici\xF3n EfrainRC3\r\n\r\nDise\xF1o de videojuego\r\nEfrainRC3\r\n\r\nDise\xF1o
     de niveles\r\nEfrainRC3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -1022,7 +1022,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Mimic: programador y m\xFAsico - EfrainRC3: Modelador 3D y dise\xF1ador
+  m_text: "banzaiMimic: programador y m\xFAsico - EfrainRC3: Modelador 3D y dise\xF1ador
     de juego"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.6
+  m_fontSize: 40.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2922,7 +2922,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Bloques de terreno desde el paquete\r\nSci-Fi Styled Modular Pack\r\n\r\nSonidos\r\nhttps://www.bfxr.net/\r\n\r\nM\xFAsica
-    de fondo\r\nAutor Mimic\r\n\r\nModelado 3D personajes\r\nAutor EfrainRC3"
+    de fondo\r\nAutor banzaiMimic\r\n\r\nModelado 3D personajes\r\nAutor EfrainRC3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -4956,7 +4956,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2116940583}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 795595087}
+        m_TargetAssemblyTypeName: ConfigQuality, Assembly-CSharp
+        m_MethodName: OnExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2116940583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5143,6 +5155,11 @@ PrefabInstance:
     - target: {fileID: 9131307707134438977, guid: d7fdab09bd6933b4e938e674c46a2cc7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9131307707134438990, guid: d7fdab09bd6933b4e938e674c46a2cc7,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9131307707134438991, guid: d7fdab09bd6933b4e938e674c46a2cc7,
