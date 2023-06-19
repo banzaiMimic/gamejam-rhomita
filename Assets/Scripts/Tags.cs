@@ -2,5 +2,6 @@
   ground,
   trampolene,
   moneda,
-  checkpoint
+  checkpoint,
+  exit
 }
