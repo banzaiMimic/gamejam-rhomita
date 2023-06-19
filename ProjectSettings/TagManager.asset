@@ -13,6 +13,7 @@ TagManager:
   - SFXManager
   - ZonaMuerte
   - Teleport
+  - checkpoint
   layers:
   - Default
   - TransparentFX

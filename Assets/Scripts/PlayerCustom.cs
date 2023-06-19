@@ -43,6 +43,10 @@ public class PlayerCustom : MonoBehaviour {
 
   }*/
 
+    public void updateOrigin(Transform checkpoint) {
+      this.origin = checkpoint;  
+    }
+
     public void RespawnPlayer()
     {
 		if (GameController.INSTANCE.lives > 0)

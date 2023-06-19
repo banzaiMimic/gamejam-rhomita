@@ -1,5 +1,6 @@
 ﻿public enum Tags {
   ground,
   trampolene,
-  moneda
+  moneda,
+  checkpoint
 }

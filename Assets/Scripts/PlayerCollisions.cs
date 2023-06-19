@@ -24,9 +24,10 @@ public class PlayerCollisions : MonoBehaviour {
     } else if (colliderTag == Tags.trampolene.ToString()) {
       this.playerCustom.dashPlayer(GameController.DEFAULT_VELOCITY_Y);
     } else if (colliderTag == Tags.moneda.ToString()) {
-      
       this.playerCustom.damagePlayer(10f);
       Destroy(other.gameObject);
+    } else if (colliderTag == Tags.checkpoint.ToString()) {
+      this.playerCustom.updateOrigin(other.transform);
     }
 
     if (colliderName == "colliderTop") {
