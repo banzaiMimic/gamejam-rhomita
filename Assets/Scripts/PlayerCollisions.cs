@@ -31,9 +31,16 @@ public class PlayerCollisions : MonoBehaviour {
       this.playerCustom.updateOrigin(other.transform);
     } else if (colliderTag == Tags.exit.ToString()) {
       SceneManager.LoadScene(0);
+    } else if (colliderTag == Tags.enemyTop.ToString()) {
+      this.playerCustom.damagePlayer(10f);
+      Destroy(other.gameObject.transform.parent.gameObject);
+    } else if (colliderTag == Tags.enemyHeal.ToString()) {
+      Debug.Log("enemy heal>..");
+      this.playerCustom.healPlayer(10f);
+      Destroy(other.gameObject.transform.parent.gameObject);
     }
 
-    if (colliderName == "colliderTop") {
+      if (colliderName == "colliderTop") {
             this.playerCustom.deathPlayer = true;
     } else if (colliderName == "colliderBot") {
       this.playerCustom.dashPlayer(0f);

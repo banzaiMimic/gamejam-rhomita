@@ -15,6 +15,8 @@ TagManager:
   - Teleport
   - checkpoint
   - exit
+  - enemyTop
+  - enemyHeal
   layers:
   - Default
   - TransparentFX

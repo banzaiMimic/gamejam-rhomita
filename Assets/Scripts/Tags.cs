@@ -3,5 +3,7 @@
   trampolene,
   moneda,
   checkpoint,
-  exit
+  exit,
+  enemyTop,
+  enemyHeal
 }
