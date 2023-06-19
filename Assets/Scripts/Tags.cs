@@ -1,5 +1,9 @@
 ﻿public enum Tags {
   ground,
   trampolene,
-  moneda
+  moneda,
+  checkpoint,
+  exit,
+  enemyTop,
+  enemyHeal
 }

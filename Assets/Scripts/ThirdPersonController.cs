@@ -83,8 +83,14 @@ namespace StarterAssets
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
 
-        // timeout deltatime
-        private float _jumpTimeoutDelta;
+        //soundManager
+        [SerializeField]
+        private AudioSource audioSource;
+        [SerializeField]
+		private AudioClip jump;
+
+		// timeout deltatime
+		private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
 
         // animation IDs
@@ -94,8 +100,10 @@ namespace StarterAssets
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
 
+		
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-        private PlayerInput _playerInput;
+		private PlayerInput _playerInput;
 #endif
         private Animator _animator;
         private CharacterController _controller;
@@ -126,7 +134,8 @@ namespace StarterAssets
             {
                 _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
             }
-        }
+            audioSource = GameObject.FindGameObjectWithTag("SFXManager").GetComponent<AudioSource>();
+		}
 
         private void Start()
         {
@@ -302,13 +311,16 @@ namespace StarterAssets
                     {
                         _animator.SetBool(_animIDJump, true);
                     }
-                }
+
+					audioSource.PlayOneShot(jump);
+				}
 
                 // jump timeout
                 if (_jumpTimeoutDelta >= 0.0f)
                 {
-                    _jumpTimeoutDelta -= Time.deltaTime;
-                }
+                    _jumpTimeoutDelta -= Time.deltaTime; 
+
+				}
             }
             else
             {

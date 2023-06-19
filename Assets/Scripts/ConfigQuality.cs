@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ConfigQuality : MonoBehaviour
 {
@@ -19,5 +20,15 @@ public class ConfigQuality : MonoBehaviour
         QualitySettings.SetQualityLevel(dropdown.value);
         PlayerPrefs.SetInt("numcalidad", dropdown.value);
         qualitySelection = dropdown.value;
+    }
+
+    public void OnChangeScene()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void OnExitGame()
+    {
+        Application.Quit();
     }
 }
