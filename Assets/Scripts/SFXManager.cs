@@ -9,7 +9,7 @@ public class SFXManager : MonoBehaviour
 
 	public void Awake()
 	{
-		
+		DontDestroyOnLoad(this);
 		
 	}
 
