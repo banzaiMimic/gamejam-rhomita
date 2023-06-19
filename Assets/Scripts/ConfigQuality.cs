@@ -11,6 +11,7 @@ public class ConfigQuality : MonoBehaviour
 
     void Start()
     {
+        SFXManager.INSTANCE.init();
         qualitySelection = PlayerPrefs.GetInt("numCalidad", 3);
         dropdown.value = qualitySelection;
         CustomQuality();
